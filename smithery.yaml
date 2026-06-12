@@ -33,3 +33,9 @@ configSchema:
         Your API key from catalyst.stratogenic.ai.
         Sent as the X-API-Key header on every request.
       x-secret: true
+    tenantId:
+      type: string
+      title: Tenant ID
+      description: >
+        Optional. Override the tenant resolved from your API key.
+        Leave blank for standard single-tenant use.
