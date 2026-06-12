@@ -36,6 +36,7 @@ configSchema:
     tenantId:
       type: string
       title: Tenant ID
+      default: ""
       description: >
         Optional. Override the tenant resolved from your API key.
         Leave blank for standard single-tenant use.
