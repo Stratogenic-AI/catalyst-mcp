@@ -1,5 +1,7 @@
 # Catalyst MCP Server
 
+[![Catalyst MCP server](https://smithery.ai/badge/markjsmith311/catalyst)](https://smithery.ai/servers/markjsmith311/catalyst)
+
 Governance middleware for AI agents — hosted SSE endpoint.
 
 ## What it does
