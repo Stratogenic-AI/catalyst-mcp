@@ -98,3 +98,5 @@ catalyst_await_approval(proposal_id) # poll until approved: true
 
 - Homepage: [catalyst.stratogenic.ai](https://catalyst.stratogenic.ai)
 - Smithery: [smithery.ai/servers/markjsmith311/catalyst](https://smithery.ai/servers/markjsmith311/catalyst)
+- Official MCP Registry: [registry.modelcontextprotocol.io](https://registry.modelcontextprotocol.io/v0.1/servers?search=Stratogenic-AI)
+- mcp.so: [mcp.so/server/catalyst-governance](https://mcp.so/server/catalyst-governance)
