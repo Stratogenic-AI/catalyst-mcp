@@ -20,6 +20,7 @@ startCommand:
   url: https://catalyst.stratogenic.ai/mcp/sse
   headers:
     X-API-Key: "{{config.apiKey}}"
+    X-Tenant-ID: "{{config.tenantId}}"
 
 configSchema:
   type: object
