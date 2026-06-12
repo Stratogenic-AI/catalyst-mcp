@@ -20,7 +20,6 @@ startCommand:
   url: https://catalyst.stratogenic.ai/mcp/sse
   headers:
     X-API-Key: "{{config.apiKey}}"
-    X-Tenant-ID: "{{config.tenantId}}"
 
 configSchema:
   type: object
@@ -34,10 +33,3 @@ configSchema:
         Your API key from catalyst.stratogenic.ai.
         Sent as the X-API-Key header on every request.
       x-secret: true
-    tenantId:
-      type: string
-      title: Tenant ID
-      default: ""
-      description: >
-        Optional. Override the tenant resolved from your API key.
-        Leave blank for standard single-tenant use.
