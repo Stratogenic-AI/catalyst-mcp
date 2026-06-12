@@ -17,7 +17,7 @@ Catalyst puts a governance layer between your AI agent and consequential actions
 
 ## Use with Claude Code
 
-Claude Code is the primary use case Catalyst was designed for. Claude Code governs itself session-locally — it asks before running dangerous commands, but those decisions leave no audit trail, survive no context reset, and sit outside your organisation's approval workflows.
+Claude Code is a primary use case Catalyst was designed for. Claude Code governs itself session-locally — it asks before running dangerous commands, but those decisions leave no audit trail, survive no context reset, and sit outside your organisation's approval workflows.
 
 Catalyst externalises that governance. Once connected, every consequential action Claude Code attempts is routed through your policy, logged in an immutable ledger, and (if required) held for human approval in the Catalyst dashboard before Claude Code proceeds.
 
