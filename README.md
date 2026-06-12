@@ -15,9 +15,42 @@ Catalyst puts a governance layer between your AI agent and consequential actions
 - Hash-linked audit ledger — every agent action is recorded with `touched_by.source=mcp`
 - Webhook notifications for `proposal.accepted` / `proposal.declined` events
 
+## Use with Claude Code
+
+Claude Code is the primary use case Catalyst was designed for. Claude Code governs itself session-locally — it asks before running dangerous commands, but those decisions leave no audit trail, survive no context reset, and sit outside your organisation's approval workflows.
+
+Catalyst externalises that governance. Once connected, every consequential action Claude Code attempts is routed through your policy, logged in an immutable ledger, and (if required) held for human approval in the Catalyst dashboard before Claude Code proceeds.
+
+**Connect in one command:**
+
+```bash
+claude mcp add catalyst \
+  --transport sse \
+  --url https://catalyst.stratogenic.ai/mcp/sse \
+  --header "X-API-Key: SGC_your_key_here"
+```
+
+Claude Code will automatically call `catalyst_check_action` before destructive operations and `catalyst_await_approval` when a proposal is required. Every action is ledgered with `touched_by.source=mcp` — you get a permanent, verifiable record of what your AI coding agent did and when.
+
+**What governance looks like in practice:**
+
+| Claude Code action | Catalyst response (proposal mode) |
+|--------------------|-----------------------------------|
+| `git push --force` | `proposal_required` — held for approval |
+| `rm -rf ./dist` | `allow` — whitelisted build action |
+| Deploy to production | `proposal_required` — held for approval |
+| Edit source files | `allow` — within declared capabilities |
+| Call external API | `proposal_required` — undeclared capability |
+
+Set your governance mode to `observe` to start with a full audit trail only, `advisory` to flag deviations without blocking, `proposal` to require human sign-off on sensitive actions, or `strict` to allow only explicitly whitelisted capabilities.
+
+Get your API key at [catalyst.stratogenic.ai](https://catalyst.stratogenic.ai).
+
+---
+
 ## Connect
 
-Add to your MCP client config:
+Add to any MCP client config:
 
 ```json
 {
