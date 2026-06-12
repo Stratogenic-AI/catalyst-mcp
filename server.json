@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Stratogenic-AI/catalyst",
+  "title": "Catalyst Governance",
+  "description": "Governance middleware for AI agents: permission gates, approvals, compliance scanning, audit ledger.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/Stratogenic-AI/catalyst-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "sse",
+      "url": "https://catalyst.stratogenic.ai/mcp/sse",
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "description": "Your Catalyst API key from catalyst.stratogenic.ai",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
