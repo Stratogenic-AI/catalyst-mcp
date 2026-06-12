@@ -1,0 +1,35 @@
+name: Catalyst Governance
+description: >
+  Governance middleware for AI agents. Pre-execution permission gates
+  (observe → advisory → proposal → strict), human-in-the-loop approval
+  flows, compliance scanning across GDPR, SOC 2, ISO 27001, HIPAA,
+  PCI-DSS, EU AI Act, Bribery Act, and AML/KYC, and a hash-linked
+  audit ledger. Hosted SSE endpoint — no self-hosting required.
+
+categories:
+  - security
+  - compliance
+  - productivity
+
+license: commercial
+
+homepage: https://catalyst.stratogenic.ai
+
+startCommand:
+  type: url
+  url: https://catalyst.stratogenic.ai/mcp/sse
+  headers:
+    X-API-Key: "{{config.apiKey}}"
+
+configSchema:
+  type: object
+  required:
+    - apiKey
+  properties:
+    apiKey:
+      type: string
+      title: Catalyst API Key
+      description: >
+        Your API key from catalyst.stratogenic.ai.
+        Sent as the X-API-Key header on every request.
+      x-secret: true
