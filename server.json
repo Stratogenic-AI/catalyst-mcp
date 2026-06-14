@@ -10,6 +10,18 @@
   },
   "remotes": [
     {
+      "type": "streamable-http",
+      "url": "https://catalyst.stratogenic.ai/mcp",
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "description": "Your Catalyst API key from catalyst.stratogenic.ai",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    },
+    {
       "type": "sse",
       "url": "https://catalyst.stratogenic.ai/mcp/sse",
       "headers": [
