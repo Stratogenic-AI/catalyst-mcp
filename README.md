@@ -1,6 +1,7 @@
 # Catalyst MCP Server
 
 [![Catalyst MCP server](https://smithery.ai/badge/markjsmith311/catalyst)](https://smithery.ai/servers/markjsmith311/catalyst)
+[![Glama](https://glama.ai/mcp/servers/ww3rd9g6yu/badge)](https://glama.ai/mcp/servers/Stratogenic-AI/catalyst-mcp)
 
 Governance middleware for AI agents — hosted MCP server with both SSE and Streamable HTTP transports.
 
