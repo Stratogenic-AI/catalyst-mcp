@@ -2,7 +2,7 @@
 
 [![Catalyst MCP server](https://smithery.ai/badge/markjsmith311/catalyst)](https://smithery.ai/servers/markjsmith311/catalyst)
 
-Governance middleware for AI agents — hosted SSE endpoint.
+Governance middleware for AI agents — hosted MCP server with both SSE and Streamable HTTP transports.
 
 ## What it does
 
@@ -30,6 +30,14 @@ claude mcp add catalyst \
   --header "X-API-Key: SGC_your_key_here"
 ```
 
+Or with Streamable HTTP (Claude Code 0.10+):
+```bash
+claude mcp add catalyst \
+  --transport http \
+  --url https://catalyst.stratogenic.ai/mcp \
+  --header "X-API-Key: SGC_your_key_here"
+```
+
 Claude Code will automatically call `catalyst_check_action` before destructive operations and `catalyst_await_approval` when a proposal is required. Every action is ledgered with `touched_by.source=mcp` — you get a permanent, verifiable record of what your AI coding agent did and when.
 
 **What governance looks like in practice:**
@@ -50,7 +58,21 @@ Get your API key at [catalyst.stratogenic.ai](https://catalyst.stratogenic.ai).
 
 ## Connect
 
-Add to any MCP client config:
+**Streamable HTTP** (preferred — required by Glama, Smithery, and newer clients):
+
+```json
+{
+  "mcpServers": {
+    "catalyst": {
+      "url": "https://catalyst.stratogenic.ai/mcp",
+      "transport": "http",
+      "headers": { "X-API-Key": "<your-key>" }
+    }
+  }
+}
+```
+
+**SSE** (for clients that don't yet support Streamable HTTP):
 
 ```json
 {
@@ -100,3 +122,4 @@ catalyst_await_approval(proposal_id) # poll until approved: true
 - Smithery: [smithery.ai/servers/markjsmith311/catalyst](https://smithery.ai/servers/markjsmith311/catalyst)
 - Official MCP Registry: [registry.modelcontextprotocol.io](https://registry.modelcontextprotocol.io/v0.1/servers?search=Stratogenic-AI)
 - mcp.so: [mcp.so/server/catalyst-governance](https://mcp.so/server/catalyst-governance)
+- Glama: private gateway connector — 31 tools via Streamable HTTP
