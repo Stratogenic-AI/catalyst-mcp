@@ -3,7 +3,7 @@
   "name": "io.github.Stratogenic-AI/catalyst",
   "title": "Catalyst Governance",
   "description": "Governance middleware for AI agents: permission gates, approvals, compliance scanning, audit ledger.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "url": "https://github.com/Stratogenic-AI/catalyst-mcp",
     "source": "github"
